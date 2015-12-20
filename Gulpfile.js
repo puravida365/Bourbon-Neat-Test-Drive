@@ -24,7 +24,7 @@ var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var neat = require('node-neat');
+var neat = require('node-neat').includePaths;
 
 /* Scripts task */
 gulp.task('scripts', function() {
