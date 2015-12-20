@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
 
 /* Sass task */
 gulp.task('sass', function () {  
-    gulp.src('src/css/screen.scss')
+    gulp.src('src/css/base.scss')
     .pipe(plumber())
     .pipe(sass({
         includePaths: ['scss'].concat(neat)
@@ -67,6 +67,7 @@ gulp.task('browser-sync', function() {
         I like to use a vhost, WAMP guide: https://www.kristengrote.com/blog/articles/how-to-set-up-virtual-hosts-using-wamp, XAMP guide: http://sawmac.com/xampp/virtualhosts/
         */
         proxy: 'www.envoytest.com'
+        /* run MAMP with host www.envoytest.com for site to load
         /* For a static server you would use this: */
         /*
         server: {
