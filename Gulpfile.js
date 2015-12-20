@@ -24,6 +24,7 @@ var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var neat = require('node-neat');
 
 /* Scripts task */
 gulp.task('scripts', function() {
@@ -33,10 +34,10 @@ gulp.task('scripts', function() {
     'src/js/main.js'
     ])
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest('public/js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('js'));
+    .pipe(gulp.dest('public/js'));
 });
 
 /* Sass task */
@@ -46,10 +47,10 @@ gulp.task('sass', function () {
     .pipe(sass({
         includePaths: ['scss'].concat(neat)
     }))
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('public/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('public/css'))
     /* Reload the browser CSS after every change */
     .pipe(reload({stream:true}));
 });
@@ -65,7 +66,7 @@ gulp.task('browser-sync', function() {
         /*
         I like to use a vhost, WAMP guide: https://www.kristengrote.com/blog/articles/how-to-set-up-virtual-hosts-using-wamp, XAMP guide: http://sawmac.com/xampp/virtualhosts/
         */
-        proxy: 'your_dev_site.url'
+        proxy: 'www.envoy.com'
         /* For a static server you would use this: */
         /*
         server: {
@@ -80,7 +81,7 @@ gulp.task('default', ['sass', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
     gulp.watch(['src/css/*.scss', 'src/css/**/*.scss'], ['sass'])
     /* Watch app.js file, run the scripts task on change. */
-    gulp.watch(['src/js/app.js'], ['scripts'])
+    gulp.watch(['src/js/main.js'], ['scripts'])
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
 });
