@@ -10,6 +10,7 @@ npm install gulp gulp-util gulp-sass gulp-uglify gulp-rename gulp-minify-css gul
 3. Move this file in your project folder
 4. Setup your vhosts or just use static server (see 'Prepare Browser-sync for localhost' below)
 5. Type 'Gulp' and ster developing
+Source: https://gist.github.com/DESIGNfromWITHIN/11383339
 */
 
 /* Needed gulp config */
@@ -28,8 +29,8 @@ var reload = browserSync.reload;
 gulp.task('scripts', function() {
   return gulp.src([
     /* Add your JS files here, they will be combined in this order */
-    'js/vendor/jquery-1.11.1.js',
-    'js/app.js'
+    'bower_components/jquery/dist/jquery.js',
+    'src/js/main.js'
     ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('js'))
@@ -40,7 +41,7 @@ gulp.task('scripts', function() {
 
 /* Sass task */
 gulp.task('sass', function () {  
-    gulp.src('scss/style.scss')
+    gulp.src('src/css/screen.scss')
     .pipe(plumber())
     .pipe(sass({
         includePaths: ['scss'].concat(neat)
@@ -77,9 +78,9 @@ gulp.task('browser-sync', function() {
 /* Watch scss, js and html files, doing different things with each. */
 gulp.task('default', ['sass', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
-    gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass'])
+    gulp.watch(['src/css/*.scss', 'src/css/**/*.scss'], ['sass'])
     /* Watch app.js file, run the scripts task on change. */
-    gulp.watch(['js/app.js'], ['scripts'])
+    gulp.watch(['src/js/app.js'], ['scripts'])
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
 });
