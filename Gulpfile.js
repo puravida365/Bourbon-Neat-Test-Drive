@@ -79,6 +79,27 @@ gulp.task('browser-sync', function() {
     });
 });
 
+// copy images from src to public
+gulp.task('copyfiles', function() {
+    gulp.src('./src/img/**/*')
+    .pipe(gulp.dest('./public/img/'));
+});
+
+// compress images
+gulp.task('images', function() {
+    var imgSrc = './src/img/**/*',
+        imgDst = './public/img/';
+
+    return gulp.src(imgSrc)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(changed(imgDst))
+        .pipe(imagemin())
+        .pipe(gulp.dest(imgDst))
+        .pipe(notify({ message: 'Images task complete' }));
+});
+
 /* Watch scss, js and html files, doing different things with each. */
 gulp.task('default', ['sass', 'browser-sync'], function () {
     /* Watch scss, run the sass task on change. */
@@ -87,4 +108,8 @@ gulp.task('default', ['sass', 'browser-sync'], function () {
     gulp.watch(['src/js/main.js'], ['scripts'])
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
+    // Copy images to public
+    gulp.watch('./src/img/**/*', ['copyfiles']);
+    // If an image is modified, run our images task to compress images
+    gulp.watch('./src/img/**/*', ['images']);
 });
