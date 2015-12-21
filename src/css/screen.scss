@@ -201,6 +201,11 @@ header {
     margin-bottom:4px;
 }
 
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(http://www.josuemora.com/test/public/img/grabbing.png) 8 8, move;
+}
+
 #content {
     position: relative;
     padding: 0;
