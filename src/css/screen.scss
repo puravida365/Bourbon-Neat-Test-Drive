@@ -9,6 +9,7 @@ header {
     background-color: $white;
     min-height: 400px;
     width: 100%;
+    position: relative;
     nav {
         height: 60px;
         background-color: rgba($black, .75);
@@ -101,6 +102,31 @@ header {
 
         img {
             // style image as needed for mobile (responsive, or hide and show mobile optimized version)
+        }
+    @include omega();
+    }
+}
+
+#content {
+    position: relative;
+    padding: 150px 0 0 0;
+    @include outer-container;
+
+    #description {
+        
+        @include span-columns(10);
+        @include shift(1);
+        p {
+            color: $white;
+            font-size: 16px;
+        }
+    }
+    #featured-work {
+        @include span-columns(10);
+        @include shift(1);
+        
+        article {
+            @include span-columns(3);
         }
     }
 }
