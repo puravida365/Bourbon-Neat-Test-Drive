@@ -84,12 +84,12 @@ header {
                     float: right;
                     height: 40px;
                     width: 40px;
-                    padding: 8px;
+                    padding: 12px;
                     background-color: $terracota;
                     text-align: center;
                     i {
                         color: $white;
-                        font-size: 28px;
+                        font-size: 20px;
                     }
                 }
             }
@@ -111,8 +111,16 @@ header {
 
 #content {
     position: relative;
-    padding: 150px 0 0 0;
+    padding: 120px 0 0 0;
     @include outer-container;
+
+    hr {
+        @include span-columns(10);
+        @include shift(1);
+        border: 0;
+        height: 1px;
+        background: #333;
+    }
 
     #description {
         
@@ -130,9 +138,42 @@ header {
     #featured-work {
         @include span-columns(10);
         @include shift(1);
+        padding: 40px 0 0 0;
 
         article {
-            @include span-columns(3);
+            @include span-columns(4);
+        }
+        h1 {
+            color: #9f9f9f;
+            display: inline;
+            font-size: 16px;
+        }
+        h2 {
+            color: $white;
+            font-size: 14px;
+            span {
+                color: #67d9da;
+            }
+        }
+        span {
+            color: $terracota;
+            font-size: 12px;
+            padding: 0 0 0 10px;
+        }
+        p {
+            color: #9f9f9f;
+        }
+        img {
+            margin-top:30px;
+            width: 100%;
+            height: auto;
+        }
+        a {
+            color: $terracota;
+            text-decoration: none;
+            &:hover {
+                color: $white;
+            }
         }
     }
 }
