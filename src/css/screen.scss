@@ -157,8 +157,11 @@ header {
         }
         span {
             color: $terracota;
-            font-size: 12px;
+            font-size: 10px;
             padding: 0 0 0 10px;
+            &.subtitle {
+                font-size: 12px;
+            }
         }
         p {
             color: #9f9f9f;
@@ -171,9 +174,60 @@ header {
         a {
             color: $terracota;
             text-decoration: none;
+            font-size: 10px;
             &:hover {
                 color: $white;
             }
+        }
+    }
+    #news {
+        @include span-columns(10);
+        @include shift(1);
+        padding: 40px 0 40px 0;
+
+        article {
+            @include span-columns(4);
+        }
+        h1 {
+            color: #9f9f9f;
+            display: inline;
+            font-size: 16px;
+        }
+        h2 {
+            color: #9f9f9f;
+            display: inline;
+            font-size: 14px;
+            span {
+                color: #67d9da;
+            }
+        }
+        span {
+            color: $terracota;
+            font-size: 10px;
+            padding: 0 0 0 10px;
+        }
+        p {
+            color: $white;
+            font-size: 26px;
+            line-height: 26px;
+            margin: 20px 0 5px 0;
+        }
+        img {
+            margin-top:30px;
+            width: 100%;
+            height: auto;
+        }
+        a {
+            color: $terracota;
+            text-decoration: none;
+            font-size: 10px;
+            &:hover {
+                color: $white;
+            }
+        }
+        .date {
+            color: #9f9f9f;
+            font-size: 10px;
         }
     }
 }
