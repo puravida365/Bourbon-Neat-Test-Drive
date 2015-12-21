@@ -35,8 +35,8 @@ header {
         }
         #social {
             @include span-columns(3);
-            height: 40px;
-            margin-top: 20px;
+            height: 44px;
+            margin-top: 16px;
             background-color: $social-bkg;
             .twitter {
                 padding: 5px 0 5px 15px;
@@ -52,6 +52,7 @@ header {
                 span {
                     color: $social-item;
                     font-size: 14px;
+                    text-align: center;
                 }
             }
             
@@ -59,9 +60,10 @@ header {
                 @include span-columns(1 of 3);
                 background-color: $terracota;
                 text-align: center;
-                padding: 15px;
+                padding: 8px;
                 i {
                     color: $white;
+                    font-size: 28px;
                 }
                 height: 40px;
             }
