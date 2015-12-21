@@ -32,6 +32,7 @@ gulp.task('scripts', function() {
     /* Add your JS files here, they will be combined in this order */
     'bower_components/jquery/dist/jquery.js',
     'bower_components/modernizer/modernizer.js',
+    'bower_components/owl-carousel/owl-carousel/owl.carousel.js',
     'src/js/main.js'
     ])
     .pipe(concat('main.js'))
