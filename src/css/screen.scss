@@ -12,6 +12,8 @@ header {
     nav {
         height: 60px;
         background-color: rgba($black, .75);
+        font-family: 'Didact Gothic', sans-serif;
+        font-weight: bold;
 
         ul {
             @include outer-container;
@@ -32,6 +34,9 @@ header {
                     &.active {
                         color: $terracota;
                     }
+                    &.visited {
+                        color: $visited;
+                    }
                 }
             }
         }
@@ -51,7 +56,7 @@ header {
                     float: left;
                     i {
                         color: $social-item;
-                        font-size: 22px;
+                        font-size: 24px;
                         line-height: 40px;
                         padding: 0 10px 0 0;
                         vertical-align: middle;
