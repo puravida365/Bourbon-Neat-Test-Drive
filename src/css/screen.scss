@@ -158,13 +158,15 @@ header {
         span {
             color: $terracota;
             font-size: 10px;
-            padding: 0 0 0 10px;
+            padding: 0 0 0 2px;
             &.subtitle {
                 font-size: 12px;
             }
         }
         p {
             color: #9f9f9f;
+            font-size: 11px;
+            line-height: 16px;
         }
         img {
             margin-top:30px;
