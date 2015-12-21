@@ -98,5 +98,9 @@ header {
         top:0;
         z-index:0;
         background-color: $white;
+
+        img {
+            // style image as needed for mobile (responsive, or hide and show mobile optimized version)
+        }
     }
 }
