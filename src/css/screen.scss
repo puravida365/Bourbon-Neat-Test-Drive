@@ -123,7 +123,6 @@ header {
     }
 
     #description {
-        
         @include span-columns(10);
         @include shift(1);
         p {
@@ -142,6 +141,9 @@ header {
 
         article {
             @include span-columns(4);
+            @include media( $mobile ) {
+                @include span-columns(4);
+            }
         }
         h1 {
             color: #9f9f9f;
@@ -189,6 +191,9 @@ header {
 
         article {
             @include span-columns(4);
+            @include media( $mobile ) {
+                @include span-columns(4);
+            }
         }
         h1 {
             color: #9f9f9f;
@@ -210,9 +215,13 @@ header {
         }
         p {
             color: $white;
-            font-size: 26px;
-            line-height: 26px;
+            font-size: 28px;
+            line-height: 30px;
             margin: 20px 0 5px 0;
+            font-weight: normal;
+            &.featured {
+                color: #67d9da; 
+            }
         }
         img {
             margin-top:30px;

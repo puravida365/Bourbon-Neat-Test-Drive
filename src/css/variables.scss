@@ -5,3 +5,6 @@ $social-bkg: #464646;
 $social-item: #67d9da;
 $terracota: #e34e33;
 $visited: #777;
+
+$mobile: new-breakpoint(max-width 760px 4);
+// $tablet: new-breakpoint(min-width 760px 8);
