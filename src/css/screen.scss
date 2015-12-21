@@ -11,11 +11,11 @@ header {
     width: 100%;
     nav {
         height: 60px;
-        background-color: rgba($black, 0.63);
+        background-color: rgba($black, .75);
 
         ul {
             @include outer-container;
-            @include span-columns(6);
+            @include span-columns(7);
             @include shift(1);
             list-style-type: none;
             li {
@@ -35,37 +35,51 @@ header {
         }
         #social {
             @include span-columns(3);
-            height: 44px;
-            margin-top: 16px;
-            background-color: $social-bkg;
-            .twitter {
-                padding: 5px 0 5px 15px;
-                @include span-columns(2 of 3);
-                i {
-                    color: $social-item;
-                    font-size: 24px;
-                    &:hover {
-                        color: $white;
-                        cursor: pointer;
-                    }
-                } 
-                span {
-                    color: $social-item;
-                    font-size: 14px;
+            margin-top: 20px;
+
+            .social-container {
+                width: 200px;
+
+                .twitter {
+                    background-color: $social-bkg;
                     text-align: center;
+                    width: 160px;
+                    height: 40px;
+                    
+                    float: left;
+                    i {
+                        color: $social-item;
+                        font-size: 22px;
+                        line-height: 40px;
+                        padding: 0 10px 0 0;
+                        vertical-align: middle;
+                        &:hover {
+                            color: $white;
+                            cursor: pointer;
+                        }
+                    } 
+                    span {
+                        color: $social-item;
+                        vertical-align: middle;
+                        font-size: 14px;
+                        line-height: 40px;
+                        text-align: center;
+                        
+                    }
                 }
-            }
-            
-            .add {
-                @include span-columns(1 of 3);
-                background-color: $terracota;
-                text-align: center;
-                padding: 8px;
-                i {
-                    color: $white;
-                    font-size: 28px;
+                
+                .add {
+                    float: right;
+                    height: 40px;
+                    width: 40px;
+                    padding: 8px;
+                    background-color: $terracota;
+                    text-align: center;
+                    i {
+                        color: $white;
+                        font-size: 28px;
+                    }
                 }
-                height: 40px;
             }
         }
     }
