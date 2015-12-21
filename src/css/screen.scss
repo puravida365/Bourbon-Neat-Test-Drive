@@ -10,21 +10,61 @@ header {
     min-height: 400px;
     width: 100%;
     nav {
-        @include span-columns(12);
         height: 60px;
-        background-color: rgba($black, 0.5);
+        background-color: rgba($black, 0.63);
 
         ul {
             @include outer-container;
             @include span-columns(6);
+            @include shift(1);
             list-style-type: none;
-            margin: 0;
             li {
                 display: inline;
+                padding: 5px 10px;
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    &:hover {
+                        color: #e34e33;
+                    }
+                    &.active {
+                        color: $terracota;
+                    }
+                }
             }
         }
-        .social {
-            @include span-columns(6);
+        #social {
+            @include span-columns(3);
+            height: 40px;
+            margin-top: 20px;
+            background-color: $social-bkg;
+            .twitter {
+                padding: 5px 0 5px 15px;
+                @include span-columns(2 of 3);
+                i {
+                    color: $social-item;
+                    font-size: 24px;
+                    &:hover {
+                        color: $white;
+                        cursor: pointer;
+                    }
+                } 
+                span {
+                    color: $social-item;
+                    font-size: 14px;
+                }
+            }
+            
+            .add {
+                @include span-columns(1 of 3);
+                background-color: $terracota;
+                text-align: center;
+                padding: 15px;
+                i {
+                    color: $white;
+                }
+                height: 40px;
+            }
         }
     }
 }
