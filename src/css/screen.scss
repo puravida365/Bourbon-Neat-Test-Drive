@@ -27,7 +27,6 @@ header {
         font-weight: bold;
         position: relative;
         
-
         ul {
             @include outer-container;
             @include span-columns(9);
@@ -279,6 +278,10 @@ header {
             margin-top:30px;
             width: 100%;
             height: auto;
+            &:hover {
+                @include opacity(.5);
+                cursor: pointer;
+            }
         }
         a {
             color: $terracota;
