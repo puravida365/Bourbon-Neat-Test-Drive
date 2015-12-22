@@ -14,6 +14,10 @@ header {
     position: relative;
     z-index: 1;
 
+    @include media( $mobile ) {
+        display: none;
+    }
+
     nav {
         @include outer-container;
         padding: 0 76px 0 30px;
@@ -103,6 +107,9 @@ header {
     background-color: $white;
     position: relative;
     top: -60px;
+    @include media( $mobile ) {
+        top: 0;
+    }
     z-index: 0;
     img {
         // style image as needed for mobile (responsive, or hide and show mobile optimized version)
