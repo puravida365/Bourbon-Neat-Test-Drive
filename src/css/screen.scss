@@ -16,6 +16,7 @@ header {
 
     @include media( $mobile ) {
         display: none;
+        // do display mobile navigation based on whatever its design would be
     }
 
     nav {
